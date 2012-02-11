@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   def index
-
+    @projects = Project.all
   end
 
   def show
@@ -11,6 +11,10 @@ class ProjectsController < ApplicationController
     @project = Project.new
   end
 
+  def edit
+    @project = Project.find(params[:id])
+  end
+
   def create
     @project = Project.new(params[:project])
     if @project.save
@@ -18,6 +22,17 @@ class ProjectsController < ApplicationController
     else
       flash[:alert] = "Project has not been created."
       render "new"
+    end
+  end
+
+  def update
+    @project = Project.find(params[:id])
+    if @project.update_attributes(params[:project])
+      flash[:notice] = "Project has been updated."
+      redirect_to @project
+    else
+      flash[:alert] = "Project has not been updated."
+      render 'edit'
     end
   end
 end

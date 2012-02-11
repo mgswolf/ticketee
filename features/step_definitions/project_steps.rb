@@ -21,5 +21,8 @@ end
 Then /^I should be on the project page for "([^"]*)"$/ do |name|
   current_path = URI.parse(current_url).path
   current_path.should == project_path(Project.find_by_name!(name))
+end
 
+Given /^there is a project called "([^"]*)"$/ do |name|
+  Factory(:project, :name => name)
 end
