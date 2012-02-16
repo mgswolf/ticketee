@@ -28,5 +28,5 @@ Given /^there is a project called "([^"]*)"$/ do |name|
 end
 
 Then /^I should not see "([^"]*)"$/ do |text|
-   page.should_not have_content(text)
+   page.should have_no_content(text)
 end

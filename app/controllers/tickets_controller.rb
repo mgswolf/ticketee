@@ -5,9 +5,14 @@ class TicketsController < ApplicationController
                                         :update,
                                         :destroy]
 
+  def show
+  end
 
   def new
     @ticket = @project.tickets.build
+  end
+
+  def edit
   end
 
   def create
@@ -18,6 +23,16 @@ class TicketsController < ApplicationController
     else
       flash[:alert] = "Ticket has not been created."
       render :action => "new"
+    end
+  end
+
+  def update
+    if @ticket.update_attributes(params[:ticket])
+      flash[:notice] = "Ticket has been updated."
+      redirect_to [@project, @ticket]
+    else
+      flash[:alert] = "Ticket has not been updated."
+      render "edit"
     end
   end
 
