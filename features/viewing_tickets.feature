@@ -7,8 +7,8 @@ Background:
   Given there is a project called "TextMate 2"
   And that project has a ticket:
     | title          | description          |
-    | Make it shiny! | Gradients! Starbursts! oh my! |
-  And there is a project called "Internet explorer"
+    | Make it shiny! | Gradients! Starbursts! Oh my! |
+  And there is a project called "Internet Explorer"
   And that project has a ticket:
     | title                | description    |
     | Standards compliance | Isn't a joke.  |
