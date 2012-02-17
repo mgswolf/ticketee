@@ -16,6 +16,9 @@ Ticketee::Application.configure do
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
 
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
 
@@ -27,4 +30,14 @@ Ticketee::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  config.action_mailer.smtp_settings = {
+      #    :enable_starttls_auto => true,
+      :address => "smtp.gmail.com",
+      :port => 25, #587
+      :domain => "mail.google.com",
+      :user_name => "mgswolf@gmail.com",
+      :password => 'mgswolf123844'
+  }
+
 end
