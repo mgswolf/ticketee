@@ -24,9 +24,9 @@ Then /^I should be on the project page for "([^"]*)"$/ do |name|
 end
 
 Given /^there is a project called "([^"]*)"$/ do |name|
-  Factory(:project, :name => name)
+  @project = Factory(:project, :name => name)
 end
 
 Then /^I should not see "([^"]*)"$/ do |text|
-   page.should_not have_content(text)
+   page.should have_no_content(text)
 end

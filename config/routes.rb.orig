@@ -1,6 +1,9 @@
 Ticketee::Application.routes.draw do
+<<<<<<< HEAD
+=======
   devise_for :users
 
+>>>>>>> a28f13f6e2eb6a067a7347a9fb9e340a3b841eb3
   resources :projects do
     resources :tickets
   end

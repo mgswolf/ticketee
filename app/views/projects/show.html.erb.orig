@@ -1,5 +1,8 @@
 <% title(@project.name, "Projects") %>
 <h2><%= @project.name %></h2>
+<<<<<<< HEAD
+<%= link_to "New Ticket", new_project_ticket_path(@project) %>
+=======
 
 <ul id="tickets">
   <% @project.tickets.each do |ticket| %>
@@ -11,5 +14,6 @@
 
 <%= link_to "New Ticket", new_project_ticket_path(@project) %>
 
+>>>>>>> a28f13f6e2eb6a067a7347a9fb9e340a3b841eb3
 <%= link_to "Edit Project", edit_project_path(@project) %>
 <%= link_to "Delete Project", @project, :method => :delete, :confirm => "Are you sure you want to delete this project?" %>
