@@ -8,8 +8,13 @@
     </li>
   <% end %>
 </ul>
+<%=  authorized?("create tickets".to_sym, @project) do %>
 <%= link_to "New Ticket", new_project_ticket_path(@project) %>
+<% end %>
+
+
+
 <%=  admins_only do %>
-   <%= link_to "Edit Project", edit_project_path(@project) %>
-  <%= link_to "Delete Project", @project, :method => :delete, :confirm => "Are you sure you want to delete this project?" %>
+    <%= link_to "Edit Project", edit_project_path(@project) %>
+   <%= link_to "Delete Project", @project, :method => :delete, :confirm => "Are you sure you want to delete this project?" %>
 <% end %>
