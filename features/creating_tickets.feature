@@ -8,7 +8,8 @@ I want to be able to select a project and do that
     And there are the following users:
       | email             | password |
       | user@ticketee.com | password |
-    And "user@ticketee.com" can view the "Internet Explorer" project
+    Given "user@ticketee.com" can view the "Internet Explorer" project
+    Given "user@ticketee.com" can create tickets on the "Internet Explorer" project
     And I am signed in as them
     And I am on the homepage
     When I follow "Internet Explorer"
