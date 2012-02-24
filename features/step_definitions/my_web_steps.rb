@@ -32,6 +32,10 @@ When /^I check "([^"]*)"$/ do |field|
   check(field)
 end
 
+When /^I attach the file "([^"]*)" to "([^"]*)"$/ do |path, field|
+  attach_file(field, File.expand_path(path))
+end
+
 
 
 
