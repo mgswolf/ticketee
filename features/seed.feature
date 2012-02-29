@@ -12,7 +12,6 @@ Feature: Seed Data
     When I fill in "Title" with "Comments with state"
     And I fill in "Description" with "Comments always have a state"
     And I press "Create Ticket"
-    Then show me the page
     Then I should see "New" within "#comment_state_id"
     And I should see "Open" within "#comment_state_id"
-    And I should see "Closed" within "comment_state_id"
+    And I should see "Closed" within "#comment_state_id"
