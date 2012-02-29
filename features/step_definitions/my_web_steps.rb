@@ -51,3 +51,7 @@ When /^I follow "([^"]*)" within "([^"]*)"$/ do |link, selector|
     click_link(link)
   end
 end
+
+When /^I select "([^"]*)" from "([^"]*)"$/ do |value, field|
+  select(value, :from => field)
+end
