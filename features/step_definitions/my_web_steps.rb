@@ -40,7 +40,14 @@ Then /^show me the page$/ do
   save_and_open_page
 end
 
+Then /^I should see "([^"]*)" within "([^"]*)"$/ do |text, selector|
+  within(selector) do           # Did search WITHIN selector, I tried
+    page.should have_content(text)
+  end
+end
 
-
-
-
+When /^I follow "([^"]*)" within "([^"]*)"$/ do |link, selector|
+  within(selector) do
+    click_link(link)
+  end
+end

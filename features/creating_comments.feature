@@ -14,10 +14,9 @@ Feature: Creating comments
       | title                   | description                            |
       | Change a ticket's state | You should be able to create a comment |
     Given I am on the homepage
-    And I follow "Ticketee"
+    And I follow "Ticketee" within "#projects"
 
   Scenario: Creating a comment
-    Then show me the page
     When I follow "Change a ticket's state"
     And I fill in "Text" with "Added a comment!"
     And I press "Create Comment"
@@ -28,5 +27,5 @@ Feature: Creating comments
     When I follow "Change a ticket's state"
     And I press "Create Comment"
     Then I should see "Comment has not been created."
-    And I should see "Text can't be blank."
+    And I should see "Text can't be blank"
 

@@ -6,9 +6,4 @@ Given /^"([^"]*)" has created a ticket for this project:$/ do |email, table|
 end
 
 
-Then /^I should see "([^"]*)" within "([^"]*)"$/ do |text, selector|
-  within(selector) do           # Did search WITHIN selector, I tried
-    page.should have_content(text)
-  end
-end
 

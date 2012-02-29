@@ -5,10 +5,10 @@ class CommentsController < ApplicationController
   def create
     @comment = @ticket.comments.build(params[:comment].merge(:user => current_user))
     if @comment.save
-      flash[:notice] = "Comment has been create."
+      flash[:notice] = "Comment has been created."
       redirect_to [@ticket.project, @ticket]
     else
-      flash[:alert] = "Comment has not been create."
+      flash[:alert] = "Comment has not been created."
       render :template => "tickets/show"
     end
   end
