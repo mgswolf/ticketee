@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
       params[:comment].delete(:state_id)
     end
     if @comment.save
+      @ticket.tag!(params[:tags])
       flash[:notice] = "Comment has been created."
       redirect_to [@ticket.project, @ticket]
     else

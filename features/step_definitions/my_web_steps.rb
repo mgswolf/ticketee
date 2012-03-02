@@ -55,3 +55,9 @@ end
 When /^I select "([^"]*)" from "([^"]*)"$/ do |value, field|
   select(value, :from => field)
 end
+
+Then /^I should not see "([^"]*)" within "([^"]*)"$/ do |text, selector|
+  within(selector) do           # Did search WITHIN selector, I tried
+    page.should have_no_content(text)
+  end
+end
