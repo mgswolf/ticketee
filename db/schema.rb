@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120301130211) do
+ActiveRecord::Schema.define(:version => 20120302185240) do
 
   create_table "assets", :force => true do |t|
     t.integer  "ticket_id"
@@ -55,6 +55,15 @@ ActiveRecord::Schema.define(:version => 20120301130211) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "default",    :default => false
+  end
+
+  create_table "tags", :force => true do |t|
+    t.string "name"
+  end
+
+  create_table "tags_tickets", :id => false, :force => true do |t|
+    t.integer "tag_id"
+    t.integer "ticket_id"
   end
 
   create_table "tickets", :force => true do |t|
