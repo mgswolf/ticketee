@@ -10,6 +10,7 @@ gem 'dynamic_form'
 gem 'devise', '~> 1.5.3'
 gem 'cancan'
 gem 'paperclip'
+gem 'searcher'
 
 # Gems used only for assets and not required
 # in production environments by default.
