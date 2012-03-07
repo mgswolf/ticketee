@@ -16,3 +16,5 @@
 .idea
 /.idea
 public/system
+config/initializers/mail.rb
+features/sending_emails.feature
