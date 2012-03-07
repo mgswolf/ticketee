@@ -18,3 +18,4 @@
 public/system
 config/initializers/mail.rb
 features/sending_emails.feature
+features/gmail.feature
