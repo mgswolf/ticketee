@@ -26,11 +26,11 @@ describe "/api/v1/projects", :type => :api do
       projects = JSON.parse(last_response.body)
 
       projects.any? do |p|
-        p["name"] == "Ticketee"
+        p["project"]["name"] == "Ticketee"
       end.should be_true
 
       projects.any? do |p|
-        p["name"] == "Access Denied"
+        p["project"]["name"] == "Access Denied"
       end.should be_false
     end
 
@@ -44,6 +44,10 @@ describe "/api/v1/projects", :type => :api do
 
   context "creating a project" do
     let(:url) {"/api/v1/projects"}
+    before do
+      user.admin = true
+      user.save
+    end
     it "successful JSON" do
       post "#{url}.json", :token => token,
                           :project => {
