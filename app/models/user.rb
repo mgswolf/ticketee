@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
 
   before_save :ensure_authentication_token
 
+
   def to_s
     "#{email} (#{admin? ? "Admin" : "User"})"
   end
