@@ -11,6 +11,9 @@ gem 'devise', '~> 1.5.3'
 gem 'cancan'
 gem 'paperclip'
 gem 'searcher'
+#gem "oa-oauth", :require => "omniauth/oauth"
+gem 'kaminari'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -29,7 +32,13 @@ gem 'jquery-rails'
 # gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+group :development do
+  gem 'capistrano'
+end
+
+group :production do
+  gem 'mysql2'
+end
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
