@@ -2,7 +2,7 @@ class Comment < ActiveRecord::Base
   after_create :set_ticket_state
   before_create :set_previous_state
 
-  belongs_to :ticket
+  belongs_to :ticket, :touch => true
   belongs_to :user
   belongs_to :state
   belongs_to :previous_state, :class_name => "State"
